@@ -1,0 +1,56 @@
+import { Link } from "react-router-dom";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import FeaturedIssueCard from "./FeaturedIssueCard";
+
+export default function HeroSection({ featured }) {
+    return (
+      <Container className="my-5 text-center">
+        {/* Velkomstseksjonen */}
+        <Row>
+          <Col>
+            <h1>Velkommen til Fix!</h1>
+            <p>
+              Her kan du sende inn issue som du vil bli fikset! Trykk på "Send inn issue" for å bli videreført til skjema-siden.
+              Under vil du se en oversikt over alle tidligere innsendte saker.
+            </p>
+            
+            {/* Send inn issue og Les mer knapper under velkomstseksjon */}
+            <div className="d-flex justify-content-center my-4">
+              <Link to="/report" className="btn btn-dark me-2">
+                Send inn issue
+              </Link>
+              <Button variant="outline-dark">
+                Les mer
+              </Button>
+            </div>
+          </Col>
+        </Row>
+  
+        {/* Seksjonen for fremhevet sak */}
+        <Row>
+          <Col>
+            <h2 className="mt-5 mb-4">Alle saker vil bli fremhevet her</h2>
+            <p>
+              Her vil du kunne se alle tidligere saker som er blitt sendt inn av andre testere.
+            </p>
+  
+            {/* Placeholder-bilde eller den fremhevede saken */}
+            <div className="d-flex justify-content-center my-4">
+              {featured ? (
+                <FeaturedIssueCard issue={featured} />
+              ) : (
+                <div style={{ width: '400px', height: '200px', backgroundColor: '#e9ecef', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ fontSize: '5rem', color: '#6c757d' }}>&#x2613;</span>
+                </div>
+              )}
+            </div>
+            
+            {/* Knapp under placeholder-bildet */}
+            <Link to="/report" className="btn btn-dark mt-2">
+              Send inn issue
+            </Link>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
