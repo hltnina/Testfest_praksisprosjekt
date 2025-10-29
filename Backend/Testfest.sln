@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestfestAPI", "Backend\TestfestAPI.csproj", "{A0909DB0-209F-45D9-8283-18EB7A9042DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0909DB0-209F-45D9-8283-18EB7A9042DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0909DB0-209F-45D9-8283-18EB7A9042DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0909DB0-209F-45D9-8283-18EB7A9042DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0909DB0-209F-45D9-8283-18EB7A9042DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5254BC3B-7B30-45B9-9810-7C2E81D9A70E}
+	EndGlobalSection
+EndGlobal
