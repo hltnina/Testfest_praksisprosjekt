@@ -72,11 +72,10 @@ export default function ReportPage() {
                 placeholder="Din e-postadresse her..." 
                 value={formData.email}
                 onChange={handleChange}
-                required
               />
             </Form.Group>
 
-            {/* Tittel på sak */}
+            {/* Tittel på sak 
             <h4 className="mb-3">2. Tittel på sak</h4>
             <Form.Group className="mb-4" controlId="formTitle">
               <Form.Control 
@@ -88,7 +87,7 @@ export default function ReportPage() {
                 required
               />
               <Form.Text className="text-muted">Vær spesifikk.</Form.Text>
-            </Form.Group>
+            </Form.Group> */}
 
             {/* Type problem */}
             <h4 className="mb-3">3. Type problem</h4>
@@ -142,7 +141,7 @@ export default function ReportPage() {
             </Form.Group>
 
             {/* Forventet oppførsel */}
-            <h4 className="mb-3">5. Forventet oppførsel</h4>
+            <h4 className="mb-3">5. Anbefalt handling</h4>
             <Form.Group className="mb-5" controlId="formExpected">
               <Form.Control 
                 as="textarea" 
@@ -151,7 +150,6 @@ export default function ReportPage() {
                 placeholder="Kort beskrivelse av hvordan det skulle ha fungert..." 
                 value={formData.expectedBehavior}
                 onChange={handleChange}
-                required
               />
               <Form.Text className="text-muted">
                 Hvordan skulle det fungert?
