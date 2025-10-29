@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Backend.Controllers
+namespace TestfestAPI.Controllers
 {
-    public class IssuesController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class IssuesController : ControllerBase
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }
