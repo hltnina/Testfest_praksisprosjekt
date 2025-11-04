@@ -9,6 +9,7 @@ import ReportPage from "./pages/ReportPage";
 import Footer from "./components/Footer";
 import Summary from "./pages/Summary";
 import ConfirmationPage from "./pages/ConfirmationPage";
+import "./App.css"; 
 // Her skal kun komponenter som trengs importeres her. Resten av innholdet plasseres i HomePage.jsx
 
 
@@ -16,9 +17,8 @@ export default function App() {
   return (
     // Toppnivå div
     <div>
-      
       {/* Navigasjonsbar (vises på alle sider) */}
-      <Navbar bg="light" expand="lg">
+      <Navbar className="app-header">
         <Container>
           {/* Logo/Brand */}
           <Navbar.Brand href="/">TestFest</Navbar.Brand> 
@@ -29,9 +29,8 @@ export default function App() {
             </Nav>
             
             <Nav>
-              {/* Registrer og Login knapper på høyre siden */}
-              <Button variant="outline-dark" className="me-2">Register</Button>
-              <Button variant="dark">Login</Button>
+              {/* Login knapper på høyre siden */}
+              <Button className="Login-button" variant="dark">Login</Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -47,9 +46,7 @@ export default function App() {
       </Routes>
       
       {/* Footer (vises på alle sider) */}
-      <Footer>
-
-      </Footer>
+      <Footer className="app-footer"/>
 
     </div>
   );
