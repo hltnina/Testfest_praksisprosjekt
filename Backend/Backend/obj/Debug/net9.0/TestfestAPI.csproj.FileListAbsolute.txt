@@ -161,3 +161,8 @@ C:\Users\tring\Testfest2025\Testfest_praksisprosjekt\Backend\Backend\obj\Debug\n
 C:\Users\tring\Testfest2025\Testfest_praksisprosjekt\Backend\Backend\obj\Debug\net9.0\TestfestAPI.genruntimeconfig.cache
 C:\Users\tring\Testfest2025\Testfest_praksisprosjekt\Backend\Backend\obj\Debug\net9.0\ref\TestfestAPI.dll
 C:\Users\tring\Testfest2025\Testfest_praksisprosjekt\Backend\Backend\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\tring\Testfest2025\Testfest_praksisprosjekt\Backend\Backend\bin\Debug\net9.0\TestfestAPI.staticwebassets.runtime.json
+C:\Users\tring\Testfest2025\Testfest_praksisprosjekt\Backend\Backend\bin\Debug\net9.0\HttpClientFactory.dll
+C:\Users\tring\Testfest2025\Testfest_praksisprosjekt\Backend\Backend\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\tring\Testfest2025\Testfest_praksisprosjekt\Backend\Backend\bin\Debug\net9.0\AspNet.Security.OAuth.GitHub.dll
+C:\Users\tring\Testfest2025\Testfest_praksisprosjekt\Backend\Backend\bin\Debug\net9.0\Newtonsoft.Json.dll
