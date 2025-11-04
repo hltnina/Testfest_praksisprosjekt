@@ -82,7 +82,7 @@ export default function IssuesTable({ issues }) {
   
 
 return (
-  <section className="my-5">
+  <section className="IssuesTable my-5">
     <h3 className="mb-4">Alle issues</h3>
 
     {/* Filterseksjonen */}

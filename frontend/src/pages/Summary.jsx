@@ -43,27 +43,28 @@ export default function Summary() {
                     
                     {/* VISNING AV DATAENE (som i bildet) */}
                     
-                    {/* 1. Tittel på sak */}
+                    {/* 1. Tittel på sak 
                     <h4 className="mb-3">1. Tittel på sak</h4>
                     <p className="mb-4 p-2 border rounded">{formData.title || 'Ingen tittel'}</p>
+                    */}
 
                     {/* 2. Type problem */}
-                    <h4 className="mb-3">2. Type problem</h4>
+                    <h4 className="mb-3">1. Type problem</h4>
                     <div className="d-flex flex-wrap gap-2 mb-4">
                         <span className="badge bg-dark">{formData.type}</span>
                         {/* Flere badges for de andre knappene hvis du sporer dem */}
                     </div>
                     
                     {/* 3. Beskrivelse */}
-                    <h4 className="mb-3">3. Beskrivelse</h4>
+                    <h4 className="mb-3">2. Beskrivelse*</h4>
                     <div className="mb-4 p-2 border rounded" style={{ whiteSpace: 'pre-wrap' }}>
                         {formData.description || 'Ingen beskrivelse'}
                     </div>
 
-                    {/* 4. Forventet oppførsel */}
-                    <h4 className="mb-3">4. Forventet oppførsel</h4>
+                    {/* 4. Anbefalt hNDLING */}
+                    <h4 className="mb-3">3. Anbefalt handling</h4>
                     <div className="mb-5 p-2 border rounded" style={{ whiteSpace: 'pre-wrap' }}>
-                        {formData.expectedBehavior || 'Ingen forventet oppførsel'}
+                        {formData.expectedBehavior || "Ikke fylt ut."}
                     </div>
 
                     {/* Knapper for bekreftelse/tilbake */}
