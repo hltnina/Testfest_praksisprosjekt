@@ -51,32 +51,19 @@ export default function ReportPage() {
   };
 
   return (
-    <Container className="my-5">
+    <Container className="Report-form my-5">
       <Row className="justify-content-center">
         <Col md={8} lg={6}>
           <div className="text-center mb-5">
             <h1>Meld inn din sak</h1>
             <p className="text-muted">
-              Fyll ut følgende skjerma, fra felt 1 til felt 5. Alle felter skal fylles ut, det er viktig at du er spesifikt og tydelig. 
+              Fyll ut følgende skjerma, fra felt 1 til felt 4. Det er viktig at du er spesifikt og tydelig. 
             </p>
           </div>
 
           <Form onSubmit={handleSubmit}>
-            
-            {/* Fyll inn din e-postadresse */}
-            <h4 className="mb-3">1. Fyll inn din e-postadresse</h4>
-            <Form.Group className="mb-4" controlId="formEmail">
-              <Form.Control 
-                type="email" 
-                name="email" 
-                placeholder="Din e-postadresse her..." 
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
 
-            {/* Tittel på sak */}
+            {/* Tittel på sak 
             <h4 className="mb-3">2. Tittel på sak</h4>
             <Form.Group className="mb-4" controlId="formTitle">
               <Form.Control 
@@ -88,10 +75,10 @@ export default function ReportPage() {
                 required
               />
               <Form.Text className="text-muted">Vær spesifikk.</Form.Text>
-            </Form.Group>
+            </Form.Group> */}
 
             {/* Type problem */}
-            <h4 className="mb-3">3. Type problem</h4>
+            <h4 className="mb-3">1. Type problem</h4>
             <div className="mb-4">
               <div className="d-flex flex-wrap gap-2">
                 {categories.map(cat => (
@@ -125,7 +112,7 @@ export default function ReportPage() {
             </div>
 
             {/* Beskrivelse */}
-            <h4 className="mb-3">4. Beskrivelse</h4>
+            <h4 className="mb-3">2. Beskrivelse*</h4>
             <Form.Group className="mb-4" controlId="formDescription">
               <Form.Control 
                 as="textarea" 
@@ -142,7 +129,7 @@ export default function ReportPage() {
             </Form.Group>
 
             {/* Forventet oppførsel */}
-            <h4 className="mb-3">5. Forventet oppførsel</h4>
+            <h4 className="mb-3">3. Anbefalt handling</h4>
             <Form.Group className="mb-5" controlId="formExpected">
               <Form.Control 
                 as="textarea" 
@@ -151,10 +138,24 @@ export default function ReportPage() {
                 placeholder="Kort beskrivelse av hvordan det skulle ha fungert..." 
                 value={formData.expectedBehavior}
                 onChange={handleChange}
-                required
+              />
+              {/*<Form.Text className="text-muted">
+                Hvordan skulle det ha vært?
+            </Form.Text>*/}
+            </Form.Group>
+
+            {/* Fyll inn din e-postadresse */}
+            <h4 className="mb-3">4. Fyll inn din e-postadresse</h4>
+            <Form.Group className="mb-4" controlId="formEmail">
+              <Form.Control 
+                type="email" 
+                name="email" 
+                placeholder="Din e-postadresse her..." 
+                value={formData.email}
+                onChange={handleChange}
               />
               <Form.Text className="text-muted">
-                Hvordan skulle det fungert?
+                Ikke obligatorisk.
               </Form.Text>
             </Form.Group>
 

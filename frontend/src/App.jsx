@@ -12,8 +12,12 @@ import ReportPage from "./pages/ReportPage";
 import Footer from "./components/Footer";
 import Summary from "./pages/Summary";
 import ConfirmationPage from "./pages/ConfirmationPage";
+<<<<<<< HEAD
 import api from "./services/api"; // axios med withCredentials
 
+=======
+import "./App.css"; 
+>>>>>>> 085055b6358ba023fb4ec91bc7a47d3a39f130d7
 // Her skal kun komponenter som trengs importeres her. Resten av innholdet plasseres i HomePage.jsx
 
 
@@ -44,9 +48,8 @@ export default function App() {
   return (
     // Toppnivå div
     <div>
-      
       {/* Navigasjonsbar (vises på alle sider) */}
-      <Navbar bg="light" expand="lg">
+      <Navbar className="app-header">
         <Container>
           {/* Logo/Brand */}
           <Navbar.Brand href="/">TestFest</Navbar.Brand> 
@@ -73,8 +76,13 @@ export default function App() {
                           </>
                       )}
             <Nav>
+<<<<<<< HEAD
             
              
+=======
+              {/* Login knapper på høyre siden */}
+              <Button className="Login-button" variant="dark">Login</Button>
+>>>>>>> 085055b6358ba023fb4ec91bc7a47d3a39f130d7
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -90,9 +98,7 @@ export default function App() {
       </Routes>
       
       {/* Footer (vises på alle sider) */}
-      <Footer>
-
-      </Footer>
+      <Footer className="app-footer"/>
 
     </div>
   );

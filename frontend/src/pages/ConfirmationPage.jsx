@@ -20,10 +20,10 @@ export default function Confirmation() {
                     </h1>
                     
                     <p className="mb-4">
-                        Saken din er sendt inn. Under ligger det et sammendrag av det du fylte ut.
+                        Saken din er sendt inn. Under ligger det et sammendrag av det du sendte inn.
                     </p>
                     <p className="mb-5">
-                        Du vil motta en bekreftelses-e-post snart til følgende e-post:
+                        Du vil motta en bekreftelses-e-post dersom du fylte det ut. Følgende e-post fylt ut:
                         <br />
                         <a href={`mailto:${email}`} style={{ fontWeight: "bold", textDecoration: 'underline' }}>
                             {email}
