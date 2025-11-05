@@ -62,18 +62,22 @@ export default function App() {
 
                       {/* Vis "Register / Login " hvis bruker IKKE er inne */ }
                       {!isLoggedIn && ( 
-                          <>  
-                        <Button variant="outline-dark" className="me-2">Register</Button>
-                              <Button variant="dark" onClick={() =>
-                                  window.location.href="/login"}>Login</Button>
-                          </>
+                                    <>  
+                                <Button className="Login-button" variant="dark" onClick={() =>
+                                    window.location.href="/login"}>Login</Button>
+                            </>
                       )}
             <Nav>
             
               {/* Login knapper på høyre siden */}
               <Button className="Login-button" variant="dark">Login</Button>
 
-            </Nav>
+                      {/* Vis KUN "logg ut" hvis bruker er inne (JWT-cookie eksisterer) */ }
+                      {isLoggedIn && (
+                          <Button variant="dark" onClick={HandleLogOut}>
+                              Logg ut
+                          </Button>
+                      )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
