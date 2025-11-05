@@ -18,10 +18,12 @@ body {
 
   .app-footer {
     border-top: 3px solid #dee2e6; 
-    padding-top: 1.7rem;   
-    padding-bottom: 1.7rem;  
+    padding-top: 1.4rem;   
+    padding-bottom: 1.4rem;  
     background-color: white; 
     margin-top: auto;
+    position: fixed;
+    width: 100%;
     bottom: 0;
 }
 
