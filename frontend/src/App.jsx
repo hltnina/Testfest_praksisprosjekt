@@ -1,7 +1,5 @@
 // src/App.jsx
-
 // Nødvendige importerte komponenter
-// src/App.jsx
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
@@ -15,8 +13,6 @@ import ConfirmationPage from "./pages/ConfirmationPage";
 import api from "./services/api"; // axios med withCredentials
 import "./App.css"; 
 
-// Her skal kun komponenter som trengs importeres her. Resten av innholdet plasseres i HomePage.jsx
-
 
 export default function App() {
 
@@ -29,8 +25,6 @@ export default function App() {
             .then(() => setIsLoggedIn(true))
             .catch(() => setIsLoggedIn(false));
     }, []);
-
-   
 
     // Logout: sletter HttpOnly JWT-Cookie og sender bruker tilbake til login-siden
     const HandleLogOut = async () => {
@@ -47,30 +41,17 @@ export default function App() {
         <Container>
           {/* Logo/Brand */}
           <Navbar.Brand href="/">TestFest</Navbar.Brand> 
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          
+          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-            </Nav>
+            <Nav className="NavBar me-auto"/>
 
-                      {/* vis KUN "logg ut" hvis bruker er inne (JWT-cookie eksisterer) */ }
-                      {isLoggedIn && (
-                          <Button variant="dark" onClick={HandleLogOut}>
-                              Logg ut
-                          </Button>
-                      )}
-
-                      {/* Vis "Register / Login " hvis bruker IKKE er inne */ }
+                      {/* Vis Login " hvis bruker IKKE er inne */ }
                       {!isLoggedIn && ( 
                                     <>  
                                 <Button className="Login-button" variant="dark" onClick={() =>
                                     window.location.href="/login"}>Login</Button>
                             </>
                       )}
-            <Nav>
-            
-              {/* Login knapper på høyre siden */}
-              <Button className="Login-button" variant="dark">Login</Button>
 
                       {/* Vis KUN "logg ut" hvis bruker er inne (JWT-cookie eksisterer) */ }
                       {isLoggedIn && (

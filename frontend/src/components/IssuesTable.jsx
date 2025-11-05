@@ -76,225 +76,124 @@ export default function IssuesTable({ issues = [] }) {
         </Pagination.Item>
     ));
 
-
-
-
     //dropdown (hard-kodet)
     const uniqueCompanies = ["Testfest"];
     const uniqueTypes = ["Ukjent"];
 
-
     return (
-        <section className="my-5">
-            <h3 className="mb-4">Alle issues</h3>
-
-            {/* Filterseksjonen */}
-            <div className="d-flex flex-wrap gap-5 mb-4">
-                {/* Søkefelt */}
-                <Form.Control
-                    type="text"
-                    className="w-25"
-                    placeholder="Søk for Saksnummer..."
-                    value={filters.search}
-                    onChange={(e) => handleFilterChange('search', e.target.value)}
-                />
-
-                {/* Dropdown for Selskap */}
-                <Form.Select className="w-auto" value={filters.selskap} onChange={(e) => handleFilterChange('selskap', e.target.value)}>
-                    <option value="all">Selskap</option>
-                    {uniqueCompanies.map(c => <option key={c} value={c}>{c}</option>)}
-                </Form.Select>
-
-                {/* Dropdown for Type */}
-                <Form.Select className="w-auto" value={filters.type} onChange={(e) => handleFilterChange('type', e.target.value)}>
-                    <option value="all">Type</option>
-                    {uniqueTypes.map(t => <option key={t} value={t}>{t}</option>)}
-                </Form.Select>
-
-                {/* Dropdown for Dato (mulig sortering) */}
-                <Form.Select className="w-auto" value={filters.sort} onChange={(e) => handleFilterChange('sort', e.target.value)}>
-                    <option value="dateDesc">Dato</option>
-                    <option value="dateDesc">Sist oppdatert (Nyeste)</option>
-                    <option value="dateAsc">Sist oppdatert (Eldste)</option>
-                </Form.Select>
-
-                {/* Dropdown for Status */}
-                <Form.Select className="w-auto" value={filters.status} onChange={(e) => handleFilterChange('status', e.target.value)}>
-                    <option value="all">Status</option>
-                    <option value="Open">Åpen</option>
-                    <option value="In Progress">Under behandling</option>
-                    <option value="Closed">Lukket</option>
-                </Form.Select>
-            </div>
-
-            {/* Visningskontroll og antall treff */}
-            <div className="d-flex justify-content-between align-items-center mb-3">
-                <p className="mb-0">Viser {startIndex + 1} til {Math.min(endIndex, filteredAndSorted.length)} av {filteredAndSorted.length} saker</p>
-                <Form.Select className="w-auto" style={{ maxWidth: '120px' }}>
-                    <option>5 per visning</option>
-                    <option>10 per visning</option>
-                    <option>20 per visning</option>
-                </Form.Select>
-            </div>
-
-            {/* Tabellen (issuesToDisplay for visdning av data) */}
-            <Table striped hover responsive className="shadow-sm">
-                <thead className="table-dark">
-                    <tr>
-                        <th>Tittel</th>
-                        <th>Saksnummer</th>
-                        <th>Selskap</th>
-                        <th>Type</th>
-                        <th>Sist oppdatert</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {issuesToDisplay.length > 0 ? (
-                        issuesToDisplay.map((issue) => (
-                            <tr
-                                key={issue.id}
-                                style={{ cursor: "pointer" }}
-                                onClick={() => navigate(`/issue/${issue.id}`)}
-                            >
-                                <td>{issue.title}</td>
-                                <td>{issue.id}</td> {/* ID som saksnummer */}
-                                <td>{issue.company || 'N/A'}</td>
-                                <td>{issue.type || 'N/A'}</td>
-                                <td>{new Date(issue.createdAt).toLocaleDateString('no-NO')}</td>
-                                <td>{issue.status}</td>
-                            </tr>
-                        ))
-                    ) : (
-                        <tr>
-                            <td colSpan="6" className="text-center">
-                                Ingen saker funnet
-                            </td>
-                        </tr>
-                    )}
-                </tbody>
-            </Table>
-
-            {/* Paginering */}
-            <div className="d-flex justify-content-center">
-                <Pagination>
-                    <Pagination.Prev onClick={() => setCurrentPage(c => Math.max(1, c - 1))} disabled={currentPage === 1} />
-                    {items}
-                    <Pagination.Next onClick={() => setCurrentPage(c => Math.min(totalPages, c + 1))} disabled={currentPage === totalPages} />
-                </Pagination>
-            </div>
-        </section>
-    );
-
-<<<<<<< HEAD
-}
-=======
-  // Henter unike verdier for dropdowns (dummy-versjon) 
-  // Henter fra backend når det er implementert
-  const uniqueCompanies = [...new Set(issues.map(i => i.company))];
-  const uniqueTypes = [...new Set(issues.map(i => i.type))];
+      <section className="mt-5 mb-6"
+      style={{ marginBottom: "13rem" }}
+      >
+          
+          {/* Container for hele toppseksjonen */}
+          <div className="p-4 rounded" 
+          style={{ backgroundColor: "#eef5fb" }}> 
+              
+              {/* Tittel */}
+              <h3 className="mb-4" style={{ fontSize: "1.85rem", fontWeight: "400" }}>Alle issues</h3>
   
+              {/* Filterseksjonen */}
+              <div className="d-flex flex-wrap gap-4 mb-4"> 
+                  {/* Søkefelt */}
+                  <Form.Control
+                      type="text"
+                      className="shadow-sm"
+                      style={{ width: "459px" }}
+                      placeholder="Søk for Saksnummer..."
+                      value={filters.search}
+                      onChange={(e) => handleFilterChange("search", e.target.value)}
+                  />
+  
+                  {/* Dropdowns (Selskap, Type, Dato, Status) */}
+                  <Form.Select className="shadow-sm w-auto" style={{ minWidth: "150px" }} value={filters.selskap} onChange={(e) => handleFilterChange("selskap", e.target.value)}>
+                      <option value="all">Selskap</option>
+                      {uniqueCompanies.map(c => <option key={c} value={c}>{c}</option>)}
+                  </Form.Select>
+  
+                  <Form.Select className="shadow-sm w-auto" style={{ minWidth: "150px" }} value={filters.type} onChange={(e) => handleFilterChange("type", e.target.value)}>
+                      <option value="all">Type</option>
+                      {uniqueTypes.map(t => <option key={t} value={t}>{t}</option>)}
+                  </Form.Select>
+  
+                  <Form.Select className="shadow-sm w-auto" style={{ minWidth: "150px" }} value={filters.sort} onChange={(e) => handleFilterChange("sort", e.target.value)}>
+                      <option value="dateDesc">Dato</option>
+                      <option value="dateDesc">Sist oppdatert (Nyeste)</option>
+                      <option value="dateAsc">Sist oppdatert (Eldste)</option>
+                  </Form.Select>
+  
+                  <Form.Select className="shadow-sm w-auto" style={{ minWidth: "150px" }} value={filters.status} onChange={(e) => handleFilterChange("status", e.target.value)}>
+                      <option value="all">Status</option>
+                      <option value="Open">Åpen</option>
+                      <option value="In Progress">Under behandling</option>
+                      <option value="Closed">Lukket</option>
+                  </Form.Select>
+              </div>
+              
+              {/* Visningskontroll og antall treff */}
+              <div className="d-flex justify-content-between align-items-center mt-3">
+                  <p className="mb-0 text-dark">Viser {startIndex + 1} til {Math.min(endIndex, filteredAndSorted.length)} av {filteredAndSorted.length} saker</p>
+                  <Form.Select className="w-auto" style={{ maxWidth: "120px" }}>
+                      <option>5 per visn</option> 
+                      <option>10 per visning</option>
+                      <option>20 per visning</option>
+                  </Form.Select>
+              </div>
+  
+          </div>
 
-return (
-  <section className="IssuesTable my-5">
-    <h3 className="mb-4">Alle issues</h3>
+          <Table className="mt-0"> 
+              <thead className="table-dark">
+                  <tr>
+                      <th>Tittel</th>
+                      <th>Saksnummer</th>
+                      <th>Selskap</th>
+                      <th>Type</th>
+                      <th>Sist oppdatert</th>
+                      <th>Status</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {issuesToDisplay.length > 0 ? (
+                      issuesToDisplay.map((issue) => (
+                          <tr
+                              key={issue.id}
+                              style={{ cursor: "pointer" }}
+                              onClick={() => navigate(`/issue/${issue.id}`)}
+                          >
+                              <td>{issue.title}</td>
+                              <td>{issue.id}</td> {/* ID som saksnummer */}
+                              <td>{issue.company || "N/A"}</td>
+                              <td>{issue.type || "N/A"}</td>
+                              <td>{new Date(issue.createdAt).toLocaleDateString("no-NO")}</td>
+                              <td>{issue.status}</td>
+                          </tr>
+                      ))
+                  ) : (
+                      <tr>
+                          <td colSpan="6" className="text-center py-3" 
+                          style={{ 
+                            backgroundColor: "#f5f5f5",
+                            color: "#092444",
+                            fontWeight: "600"
+                           }}>
+                              Ingen saker funnet
+                          </td>
+                      </tr>
+                  )}
+              </tbody>
+          </Table>
+  
+          {/* Paginering (kun synlig når saker finnes) */}
+          {issuesToDisplay.length > 0 && (
+              <div className="d-flex justify-content-center">
+                  <Pagination>
+                      <Pagination.Prev onClick={() => setCurrentPage(c => Math.max(1, c - 1))} disabled={currentPage === 1} />
+                      {items}
+                      <Pagination.Next onClick={() => setCurrentPage(c => Math.min(totalPages, c + 1))} disabled={currentPage === totalPages} />
+                  </Pagination>
+              </div>
+          )}
+      </section>
+  );
 
-    {/* Filterseksjonen */}
-    <div className="d-flex flex-wrap gap-5 mb-4">
-      {/* Søkefelt */}
-      <Form.Control
-        type="text"
-        className="w-25"
-        placeholder="Søk for Saksnummer..."
-        value={filters.search}
-        onChange={(e) => handleFilterChange('search', e.target.value)}
-      />
-      
-      {/* Dropdown for Selskap */}
-      <Form.Select className="w-auto" value={filters.selskap} onChange={(e) => handleFilterChange('selskap', e.target.value)}>
-        <option value="all">Selskap</option>
-        {uniqueCompanies.map(c => <option key={c} value={c}>{c}</option>)}
-      </Form.Select>
-      
-      {/* Dropdown for Type */}
-      <Form.Select className="w-auto" value={filters.type} onChange={(e) => handleFilterChange('type', e.target.value)}>
-        <option value="all">Type</option>
-        {uniqueTypes.map(t => <option key={t} value={t}>{t}</option>)}
-      </Form.Select>
-      
-      {/* Dropdown for Dato (mulig sortering) */}
-      <Form.Select className="w-auto" value={filters.sort} onChange={(e) => handleFilterChange('sort', e.target.value)}>
-        <option value="dateDesc">Dato</option>
-        <option value="dateDesc">Sist oppdatert (Nyeste)</option>
-        <option value="dateAsc">Sist oppdatert (Eldste)</option>
-      </Form.Select>
-      
-      {/* Dropdown for Status */}
-      <Form.Select className="w-auto" value={filters.status} onChange={(e) => handleFilterChange('status', e.target.value)}>
-        <option value="all">Status</option>
-        <option value="Open">Åpen</option>
-        <option value="In Progress">Under behandling</option>
-        <option value="Closed">Lukket</option>
-      </Form.Select>
-    </div>
-
-    {/* Visningskontroll og antall treff */}
-    <div className="d-flex justify-content-between align-items-center mb-3">
-        <p className="mb-0">Viser {startIndex + 1} til {Math.min(endIndex, filteredAndSorted.length)} av {filteredAndSorted.length} saker</p>
-        <Form.Select className="w-auto" style={{maxWidth: '120px'}}>
-          <option>5 per visning</option>
-          <option>10 per visning</option>
-          <option>20 per visning</option>
-        </Form.Select>
-    </div>
-
-    {/* Tabellen (issuesToDisplay for visdning av data) */}
-    <Table striped hover responsive className="shadow-sm">
-      <thead className="table-dark"> 
-        <tr>
-          <th>Tittel</th>
-          <th>Saksnummer</th>
-          <th>Selskap</th>
-          <th>Type</th>
-          <th>Sist oppdatert</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {issuesToDisplay.length > 0 ? (
-          issuesToDisplay.map((issue) => (
-            <tr
-              key={issue.id}
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate(`/issue/${issue.id}`)}
-            >
-              <td>{issue.title}</td>
-              <td>{issue.id}</td> {/* ID som saksnummer */}
-              <td>{issue.company || 'N/A'}</td>
-              <td>{issue.type || 'N/A'}</td>
-              <td>{new Date(issue.createdAt).toLocaleDateString('no-NO')}</td>
-              <td>{issue.status}</td>
-            </tr>
-          ))
-        ) : (
-          <tr>
-            <td colSpan="6" className="text-center">
-              Ingen saker funnet
-            </td>
-          </tr>
-        )}
-      </tbody>
-    </Table>
-
-    {/* Paginering */}
-    <div className="d-flex justify-content-center">
-      <Pagination>
-        <Pagination.Prev onClick={() => setCurrentPage(c => Math.max(1, c - 1))} disabled={currentPage === 1} />
-        {items}
-        <Pagination.Next onClick={() => setCurrentPage(c => Math.min(totalPages, c + 1))} disabled={currentPage === totalPages} />
-      </Pagination>
-    </div>
-  </section>
-);
 }
->>>>>>> 085055b6358ba023fb4ec91bc7a47d3a39f130d7

@@ -77,42 +77,8 @@ export default function ReportPage() {
               <Form.Text className="text-muted">Vær spesifikk.</Form.Text>
             </Form.Group> */}
 
-            {/* Type problem */}
-            <h4 className="mb-3">1. Type problem</h4>
-            <div className="mb-4">
-              <div className="d-flex flex-wrap gap-2">
-                {categories.map(cat => (
-                  <Button
-                    key={cat}
-                    variant={formData.type === cat ? 'dark' : 'outline-dark'}
-                    size="sm"
-                    onClick={() => handleTypeSelect(cat)}
-                    className="me-2"
-                  >
-                    {cat}
-                  </Button>
-                ))}
-              </div>
-              <Form.Text className="text-muted">
-                Velg kategorien som passer best til problemet ditt.
-              </Form.Text>
-              
-              {/* Legg til de ekstra "Generell henvendelse" knappene under 
-              <div className="d-flex flex-wrap gap-2 mt-2">
-                {problemTypes.map((type, index) => (
-                    <Button 
-                        key={index} 
-                        variant="outline-secondary" 
-                        size="sm"
-                    >
-                        {type}
-                    </Button>
-                ))}
-              </div>*/}
-            </div>
-
             {/* Beskrivelse */}
-            <h4 className="mb-3">2. Beskrivelse*</h4>
+            <h4 className="mb-3">1. Beskrivelse*</h4>
             <Form.Group className="mb-4" controlId="formDescription">
               <Form.Control 
                 as="textarea" 
@@ -122,6 +88,10 @@ export default function ReportPage() {
                 value={formData.description}
                 onChange={handleChange}
                 required
+
+                //Attributter som fremhever en melding på norsk om at feltet er obligatorisk.
+                onInvalid={(e) => e.target.setCustomValidity("Vennligst fyll inn en kort beskrivelse av problemet.")} 
+                onInput={(e) => e.target.setCustomValidity("")}
               />
               <Form.Text className="text-muted d-flex justify-content-between">
                 <span>Hva prøvde du å gjøre? Hva skjedde?</span>
@@ -129,7 +99,7 @@ export default function ReportPage() {
             </Form.Group>
 
             {/* Forventet oppførsel */}
-            <h4 className="mb-3">3. Anbefalt handling</h4>
+            <h4 className="mb-3">2. Anbefalt handling</h4>
             <Form.Group className="mb-5" controlId="formExpected">
               <Form.Control 
                 as="textarea" 
@@ -145,7 +115,7 @@ export default function ReportPage() {
             </Form.Group>
 
             {/* Fyll inn din e-postadresse */}
-            <h4 className="mb-3">4. Fyll inn din e-postadresse</h4>
+            <h4 className="mb-3">3. Fyll inn din e-postadresse</h4>
             <Form.Group className="mb-4" controlId="formEmail">
               <Form.Control 
                 type="email" 
@@ -161,10 +131,10 @@ export default function ReportPage() {
 
             {/* Knapper for innsending/tilbake */}
             <div className="d-flex justify-content-between">
-              <Button variant="outline-dark" onClick={() => navigate('/')}>
+              <Button variant="outline-dark" style={{backgroundColor: "#ffffff", color: "#092444", padding: "0.8rem"}} onClick={() => navigate('/')}>
                 Gå tilbake til hjem
               </Button>
-              <Button variant="dark" type="submit">
+              <Button variant="dark" type="submit" style={{backgroundColor: "#092444", paddingLeft: "2.9rem", paddingRight: "2.9rem"}}>
                 Send inn
               </Button>
             </div>

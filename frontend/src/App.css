@@ -16,6 +16,12 @@ body {
     top: 0%;
 }
 
+.navbar-brand {
+    font-size: 2rem; 
+    font-weight: 530;
+    color: #092444;
+}
+
   .app-footer {
     border-top: 3px solid #dee2e6; 
     padding-top: 1.4rem;   
@@ -29,7 +35,7 @@ body {
 
 .hero-text-container {
     max-width: 1100px;
-    padding-top: 10%;
+    padding-top: 12%;
     text-align: center;   
 }
 
@@ -58,5 +64,12 @@ h2 {
 
 }
 
+.Report-form {
+    padding-top: 130px;
+    padding-bottom: 155px;
+}
 
-
+.confirmation-container {
+    padding-top: 200px;
+    padding-bottom: 155px;
+}

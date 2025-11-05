@@ -32,7 +32,7 @@ export default function Summary() {
     };
 
     return (
-        <Container className="my-5">
+        <Container className="my-5" style={{paddingTop: "130px", paddingBottom: "155px"}}>
             <Row className="justify-content-center">
                 <Col md={8} lg={6}>
                     
@@ -47,24 +47,23 @@ export default function Summary() {
                     <h4 className="mb-3">1. Tittel på sak</h4>
                     <p className="mb-4 p-2 border rounded">{formData.title || 'Ingen tittel'}</p>
                     */}
-
-                    {/* 2. Type problem */}
-                    <h4 className="mb-3">1. Type problem</h4>
-                    <div className="d-flex flex-wrap gap-2 mb-4">
-                        <span className="badge bg-dark">{formData.type}</span>
-                        {/* Flere badges for de andre knappene hvis du sporer dem */}
-                    </div>
                     
-                    {/* 3. Beskrivelse */}
-                    <h4 className="mb-3">2. Beskrivelse*</h4>
-                    <div className="mb-4 p-2 border rounded" style={{ whiteSpace: 'pre-wrap' }}>
-                        {formData.description || 'Ingen beskrivelse'}
+                    {/* 1. Beskrivelse */}
+                    <h4 className="mb-3">1. Beskrivelse*</h4>
+                    <div className="mb-4 p-2 border rounded bg-white" style={{ whiteSpace: 'pre-wrap' }}>
+                        {formData.description || "Ingen beskrivelse"}
                     </div>
 
-                    {/* 4. Anbefalt hNDLING */}
-                    <h4 className="mb-3">3. Anbefalt handling</h4>
-                    <div className="mb-5 p-2 border rounded" style={{ whiteSpace: 'pre-wrap' }}>
+                    {/* 2. Anbefalt hNDLING */}
+                    <h4 className="mb-3">2. Anbefalt handling</h4>
+                    <div className="mb-5 p-2 border rounded bg-white" style={{ whiteSpace: 'pre-wrap' }}>
                         {formData.expectedBehavior || "Ikke fylt ut."}
+                    </div>
+
+                    {/* 3. E-postaddresse */}
+                    <h4 className="mb-3">3. E-postaddresse</h4>
+                    <div className="mb-5 p-2 border rounded bg-white" style={{ whiteSpace: 'pre-wrap' }}>
+                        {formData.email || "Ikke fylt ut."}
                     </div>
 
                     {/* Knapper for bekreftelse/tilbake */}
@@ -72,12 +71,14 @@ export default function Summary() {
                         <Button 
                             variant="outline-dark" 
                             onClick={() => navigate("/report", { state: { formData: formData } })} // Tilbake til redigering
+                            style={{backgroundColor: "#ffffff", color: "#092444", padding: "0.8rem", paddingLeft: "2.3rem", paddingRight: "2.3rem"}} 
                         >
                             Endre skjema
                         </Button>
                         <Button 
                             variant="dark" 
                             onClick={handleConfirm}
+                            style={{backgroundColor: "#092444", paddingLeft: "2rem", paddingRight: "2rem"}}
                         >
                             Bekreft og send inn
                         </Button>
