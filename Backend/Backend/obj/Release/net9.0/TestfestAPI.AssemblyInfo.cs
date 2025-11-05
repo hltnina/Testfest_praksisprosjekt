@@ -13,7 +13,7 @@ using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("40c8b5d3-ea77-4638-9aea-e588e1001dbe")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestfestAPI")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04feed23bde34dbd7aa7ae09eb968a7d1918b7ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestfestAPI")]

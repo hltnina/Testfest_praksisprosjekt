@@ -19,7 +19,7 @@ namespace TestfestAPI.Models
         public DateTime Created_at { get; set; } = DateTime.UtcNow;
 
         //relation: one user can submit many issues
-        public ICollection<Issue>? Issues { get; set; }
+       // public ICollection<Issue>? Issues { get; set; }
 
     }
 }
