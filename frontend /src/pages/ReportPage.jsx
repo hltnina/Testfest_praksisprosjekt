@@ -121,7 +121,7 @@ export default function ReportPage() {
               <Form.Control 
                 type="email" 
                 name="email" 
-                placeholder="Din e-postadresse her..." 
+                placeholder="Din e-postadresse her (ikke obligatorisk)..." 
                 value={formData.email}
                 onChange={handleChange}
               />

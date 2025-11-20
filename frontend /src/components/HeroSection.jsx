@@ -11,8 +11,7 @@ export default function HeroSection({ featured }) {
           <Col>
             <h1>Velkommen til Fix!</h1>
             <p>
-              Her kan du sende inn issue som du vil bli fikset! Trykk på "Send inn issue" for å bli videreført til skjema-siden.
-              Under vil du se en oversikt over alle tidligere innsendte saker.
+              Nedenfor kan du sende inn issues som du vil bli fikset! Trykk på "Send inn issue" under for å bli videreført til innsending av issues siden for å fylle inn din issue.
             </p>
             
             {/* Send inn issue og Les mer knapper under velkomstseksjon */}
