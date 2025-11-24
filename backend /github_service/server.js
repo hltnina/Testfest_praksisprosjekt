@@ -24,7 +24,6 @@ function makeHeaders() {
 }
 
 
-
 // Health
 app.get('/', (req, res) => {
   res.json({ ok: true, message: 'github-express-service running' });
@@ -52,7 +51,7 @@ app.post('/issues', async (req, res) => {
   }
 
   try {
-    const url = `https://api.github.com/repos/htlnina/Testfest_praksisprosjekt/issues`;
+    const url = `https://api.github.com/repos/${owner}/${repo}/issues`;
     const payload = { title, body: issueBody || '', assignees, labels };
     const response = await axios.post(url, payload, { headers: makeHeaders() });
     return res.status(201).json(response.data);
