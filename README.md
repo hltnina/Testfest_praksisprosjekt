@@ -304,22 +304,29 @@ og arbeidsliv – spesielt når det gjelder samspill mellom teknologi, mennesker
    git clone https://github.com/hltnina/Testfest_praksisprosjekt.git
 
 2. Installer nødvendige verktøy (hvis ikke installert fra før):
-   - .NET SDK 6 eller nyere
+   - npm
+   - axios
+   - react
+   - dotenv
+   - express
    - Git
 
-5. Start prosjektet lokalt:
-   dotnet run
+5. Start prosjektet lokalt fra backend mappen, og deretter fra frontend mappen:
+   Naviger først til backend mappen og skriv inn følgende: npm start
+     - Du skal se at den kjører i port 3000
+   Deretter naviger til frontend mappen og skriv inn følgende: npm run dev
+      - Du skal se at den kjører på port 5173
 
 6. Åpne nettsiden i nettleseren:
-   - Kopier URL-en som vises i terminalen (for eksempel https://localhost:5070)
+   - Kopier URL-en som vises i terminalen når du kjører den fra frontend mappen (for eksempel https://localhost:5173)
    - Lim den inn i nettleseren og åpne siden
 
-7. Test løsningen direkte på nettsiden:
+8. Test løsningen direkte på nettsiden:
    - Klikk “Send inn issue”
    - Fyll inn beskrivelse, anbefalt handling og evt. e-post
    - Gå videre til oppsummering
    - Bekreft og send inn
 
-8. Sjekk om innsendingen fungerte:
+9. Sjekk om innsendingen fungerte:
    Gå til https://github.com/hltnina/Testfest_praksisprosjekt/issues
    - Du skal nå se en ny issue med innholdet du skrev inn på nettsiden.
